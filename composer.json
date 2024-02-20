@@ -1,0 +1,21 @@
+{
+    "name": "g7sys-developers/g7engine",
+    "type": "library",
+    "description": "G7Engine is a PHP framework for web development that will replace Amaengine.",
+    "authors": [
+        {
+            "name": "Anderson Arruda",
+            "email": "anderson@g7sys.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "G7Engine\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0.0",
+        "g7sys-developers/sysaengine": "^1.0"
+    },
+    "license": "MIT"
+}
