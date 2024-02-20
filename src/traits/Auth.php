@@ -44,7 +44,7 @@ trait Auth
     {
         $db = $this->getBuilder();
         $query = $db->select('nomusu, senusu, codigo_usuario, id_accesslevel, dtavalsen, stausuati')
-            ->from('users')
+            ->from('tabela081')
             ->where('nomusu = ?')
             ->andWhere('stausuati = \'S\'')
             ->andWhere('dtavalen >= CURRENT_DATE')
