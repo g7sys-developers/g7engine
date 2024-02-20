@@ -38,9 +38,9 @@ trait Auth
     /**
      * Select user using Doctrine DBAL
      * 
-     * @return array
+     * @return array | bool
      */
-    protected function selectUser(): array
+    protected function selectUser() : array | bool
     {
         $db = $this->getBuilder();
         $query = $db->select('nomusu, senusu, codigo_usuario, id_accesslevel, dtavalsen, stausuati')
