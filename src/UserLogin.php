@@ -25,7 +25,9 @@ class UserLogin implements AuthInterface{
     public function __construct(
         protected string $username, 
         protected string $password
-    ) {}
+    ) {
+        $this->DB = conn::DB();
+    }
 
     /**
      * Get connection

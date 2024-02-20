@@ -50,7 +50,7 @@ trait Auth
             ->andWhere('dtavalen >= CURRENT_DATE')
             ->setParameter(0, $this->getUsername());
 
-        $result = $query->execute()->fetchAssociative();
+        $result = $query->executeQuery()->fetchAssociative();
         return $result;
     }
 
