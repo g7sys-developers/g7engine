@@ -47,7 +47,7 @@ trait Auth
             ->from('tabela081')
             ->where('nomusu = ?')
             ->andWhere('stausuati = \'S\'')
-            ->andWhere('dtavalen >= CURRENT_DATE')
+            ->andWhere('dtavalsen >= CURRENT_DATE')
             ->setParameter(0, $this->getUsername());
 
         $result = $query->executeQuery()->fetchAssociative();
