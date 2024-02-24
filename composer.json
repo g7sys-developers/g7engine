@@ -1,6 +1,5 @@
 {
     "name": "g7sys-developers/g7engine",
-    "version": "1.0.0",
     "type": "library",
     "description": "G7Engine is a PHP framework for web development that will replace Amaengine.",
     "authors": [
