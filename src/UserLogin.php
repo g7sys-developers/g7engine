@@ -16,16 +16,27 @@ class UserLogin implements AuthInterface{
     private object $DB;
 
     /**
+     * Username
+     * 
+     * @var string
+     */
+    private string $username;
+
+    /**
+     * Password
+     * 
+     * @var string
+     */
+    private string $password;
+
+    /**
      * Constructs class to login
      * 
      * @param string $username
      * @param string $password
      * @return void
      */
-    public function __construct(
-        protected string $username, 
-        protected string $password
-    ) {
+    public function __construct() {
         $this->DB = conn::DB();
     }
 
@@ -54,9 +65,33 @@ class UserLogin implements AuthInterface{
      * 
      * @return string
      */
-    public function getPassword(): string
+    protected function getPassword(): string
     {
         return $this->password;
+    }
+
+    /**
+     * Set username
+     * 
+     * @param string $username
+     * @return UserLogin
+     */
+    public function setUsername(string $username): UserLogin
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    /**
+     * Set password
+     * 
+     * @param string $password
+     * @return void
+     */
+    public function setPassword(string $password): UserLogin
+    {
+        $this->password = $password;
+        return $this;
     }
 }
 ?>

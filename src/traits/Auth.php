@@ -83,6 +83,27 @@ trait Auth
 
         return false;
     }
+
+    /**
+     * Logout
+     * 
+     * @return void
+     */
+    public function logout() : void
+    {
+        if(session_status() !== PHP_SESSION_ACTIVE)
+            session_destroy();
+    }
+
+    /**
+     * Check if user is logged
+     * 
+     * @return bool
+     */
+    public static function isLogged() : bool
+    {
+        return isset($_SESSION['g7sys']);
+    }
 }
 
 ?>
