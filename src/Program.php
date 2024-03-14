@@ -12,7 +12,8 @@
      */
     public static function getProgramList(int $user_id, int $access_level_id) : array {
       $DB = conn::DB();
-      $query = $DB->query("SELECT accesslevel.f_return_programa(?, ?)", [$user_id, $access_level_id]);
+      $stmt = $DB->prepare("SELECT accesslevel.f_return_programa(?, ?)");
+      $stmt->execute([$user_id, $access_level_id]);
       $result = $query->fetchAll();
       return $result;
     }
