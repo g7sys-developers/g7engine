@@ -1,7 +1,6 @@
 <?php
 namespace G7Engine\traits;
-
-if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+use G7Engine\Session;
 
 trait Auth
 {
@@ -51,18 +50,8 @@ trait Auth
             ->setParameter(0, $this->getUsername());
 
         $result = $query->executeQuery()->fetchAssociative();
+        Session::setMany($result);
         return $result;
-    }
-
-    /**
-     * Creates a session for user
-     * 
-     * @param array $user
-     * @return void
-     */
-    protected function createSession(array $user): void
-    {
-        $_SESSION['g7sys'] = $user;
     }
 
     /**
@@ -102,7 +91,7 @@ trait Auth
      */
     public static function isLogged() : bool
     {
-        return isset($_SESSION['g7sys']);
+        return Session::exists();
     }
 }
 
